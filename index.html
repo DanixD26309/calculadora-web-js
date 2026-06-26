@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora plus</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="calculator">
+
+    <!-- PANTALLA -->
+    <div class="display">
+        <div id="historial" class="historial"></div>
+        <input type="text" id="pantalla" placeholder="0" readonly>
+    </div>
+
+    <!-- MODO -->
+    <div class="mode">
+        <button onclick="cambiarModo()" id="modoBtn">DEG</button>
+    </div>
+
+    <!-- CONTROLES -->
+    <div class="controls">
+        <button onclick="limpiar()">AC</button>
+        <button onclick="borrar()">⌫</button>
+        <button onclick="cambiarSigno()">±</button>
+        <button onclick="agregar('/')">÷</button>
+    </div>
+
+    <!-- FUNCIONES -->
+    <div class="scientific">
+        <button onclick="funcion('sin')">sin</button>
+        <button onclick="funcion('cos')">cos</button>
+        <button onclick="funcion('tan')">tan</button>
+        <button onclick="funcion('sqrt')">√</button>
+
+        <button onclick="funcion('log')">log</button>
+        <button onclick="funcion('ln')">ln</button>
+        <button onclick="factorial()">x!</button>
+        <button onclick="agregar('^')">xʸ</button>
+
+        <button onclick="agregar('π')">π</button>
+        <button onclick="agregar('e')">e</button>
+        <button onclick="agregar('(')">(</button>
+        <button onclick="agregar(')')">)</button>
+    </div>
+
+    <!-- NUMEROS -->
+    <div class="numbers">
+        <button onclick="agregar('7')">7</button>
+        <button onclick="agregar('8')">8</button>
+        <button onclick="agregar('9')">9</button>
+        <button onclick="agregar('*')">×</button>
+
+        <button onclick="agregar('4')">4</button>
+        <button onclick="agregar('5')">5</button>
+        <button onclick="agregar('6')">6</button>
+        <button onclick="agregar('-')">−</button>
+
+        <button onclick="agregar('1')">1</button>
+        <button onclick="agregar('2')">2</button>
+        <button onclick="agregar('3')">3</button>
+        <button onclick="agregar('+')">+</button>
+
+        <button onclick="agregar('0')" class="zero">0</button>
+        <button onclick="agregar('.')">.</button>
+        <button onclick="calcular()" class="equal">=</button>
+    </div>
+
+    <!-- HISTORIAL LISTA -->
+    <div class="history-list" id="historyList"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

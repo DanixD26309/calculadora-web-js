@@ -1,0 +1,209 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* FONDO GENERAL */
+body {
+    background: linear-gradient(135deg, #0f172a, #020617);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* CONTENEDOR */
+.calculator {
+    width: 350px;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(30, 41, 59, 0.85);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: 0.3s ease;
+}
+
+/* EFECTO LEVE AL PASAR */
+.calculator:hover {
+    transform: scale(1.02);
+}
+
+/* ======================
+   📺 PANTALLA
+====================== */
+.display {
+    background: #020617;
+    border-radius: 15px;
+    padding: 12px;
+    margin-bottom: 10px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.9);
+}
+
+/* HISTORIAL TEXTO */
+.historial {
+    font-size: 12px;
+    color: #94a3b8;
+    text-align: right;
+    min-height: 15px;
+    opacity: 0.8;
+}
+
+/* INPUT */
+#pantalla {
+    width: 100%;
+    border: none;
+    background: transparent;
+    color: #e2e8f0;
+    font-size: 26px;
+    text-align: right;
+    outline: none;
+}
+
+/* ======================
+   🔁 MODO DEG/RAD
+====================== */
+.mode {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.mode button {
+    padding: 6px 12px;
+    font-size: 12px;
+    background: #334155;
+    color: #e2e8f0;
+    border-radius: 8px;
+}
+
+.mode button:hover {
+    background: #475569;
+}
+
+/* ======================
+   🧩 SECCIONES
+====================== */
+.controls,
+.scientific,
+.numbers {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+/* GRID */
+.controls { grid-template-columns: repeat(4, 1fr); }
+.scientific { grid-template-columns: repeat(4, 1fr); }
+.numbers { grid-template-columns: repeat(4, 1fr); }
+
+/* ======================
+   🔘 BOTONES
+====================== */
+button {
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    background: #1e293b;
+    color: #e2e8f0;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* HOVER SUAVE */
+button:hover {
+    background: #334155;
+    transform: translateY(-2px);
+    box-shadow: 0 0 6px rgba(255,255,255,0.08);
+}
+
+/* CLICK */
+button:active {
+    transform: scale(0.95);
+}
+
+/* ======================
+   🎨 COLORES POR TIPO
+====================== */
+
+/* CONTROLES */
+.controls button {
+    background: #475569;
+}
+.controls button:hover {
+    background: #64748b;
+}
+
+/* FUNCIONES CIENTÍFICAS */
+.scientific button {
+    background: #1d4ed8;
+    color: #e0f2fe;
+}
+.scientific button:hover {
+    background: #2563eb;
+}
+
+/* OPERADORES */
+.numbers button:nth-child(4),
+.numbers button:nth-child(8),
+.numbers button:nth-child(12),
+.numbers button:nth-child(16) {
+    background: #6366f1;
+}
+.numbers button:nth-child(4):hover,
+.numbers button:nth-child(8):hover,
+.numbers button:nth-child(12):hover,
+.numbers button:nth-child(16):hover {
+    background: #818cf8;
+}
+
+/* BOTÓN IGUAL */
+.equal {
+    background: #22c55e !important;
+    color: #022c22;
+    font-weight: bold;
+}
+.equal:hover {
+    background: #16a34a !important;
+}
+
+/* BOTÓN 0 */
+.zero {
+    grid-column: span 2;
+}
+
+/* ======================
+   📜 HISTORIAL LISTA
+====================== */
+.history-list {
+    max-height: 120px;
+    overflow-y: auto;
+    margin-top: 10px;
+    padding: 8px;
+    background: #020617;
+    border-radius: 10px;
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+/* SCROLL SUAVE */
+.history-list::-webkit-scrollbar {
+    width: 4px;
+}
+.history-list::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 10px;
+}
+
+/* ======================
+   📱 RESPONSIVE
+====================== */
+@media (max-width: 400px) {
+    .calculator {
+        width: 95%;
+    }
+}
